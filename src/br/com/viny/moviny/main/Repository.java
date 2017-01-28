@@ -27,11 +27,9 @@ public class Repository {
         this.movie.setId(this.id + 1);
         this.id = this.id + 1;
         System.out.print("Nome: ");
-        nome = scan.nextLine();
-        System.out.println("NOME >"+nome);
-        this.movie.setName(nome);
+        this.movie.setName(scan.nextLine());
         System.out.print("Ano: ");
-        this.movie.setYear(scan.nextInt());
+        this.movie.setYear(Integer.parseInt(scan.nextLine()));
         System.out.print("Categoria: ");
         this.movie.setCategory(scan.nextLine());
         System.out.print("Diretor: ");
@@ -43,25 +41,34 @@ public class Repository {
         this.movie.setStarring(starring);
         System.out.print("Sinópse: ");
         this.movie.setSynopsis(scan.nextLine());
+        System.out.println(movie);
         movies.add(this.movie);
+
+        System.out.println("> FILME ADICIONADO COM SUCESSO!");
     }
 
     public void showMovies() {
         for (int i = 0; i < movies.size(); i++) {
-            for (int j = 0; j < movies.size(); j++) {
-                if (movies.get(j).getId() == i) {
-                    idSearch = movies.indexOf(j);
-                }
-            }
-            System.out.println("ID: " + movies.get(idSearch).getId());
-            System.out.println("NOME: " + movies.get(idSearch).getName());
-            System.out.println("ANO: " + movies.get(idSearch).getYear());
-            System.out.println("CATEGORIA: " + movies.get(idSearch).getCategory());
-            System.out.println("DIRETOR: " + movies.get(idSearch).getDirector());
-            System.out.println("ESTRELANDO: " + movies.get(idSearch).getStarring()[0] + " e " + movies.get(idSearch).getStarring()[1]);
-            System.out.println("SINÓPSE: " + movies.get(idSearch).getYear());
+            System.out.println(" --- FICHA TÉCNICA ---");
+            System.out.println("| ID: " + movies.get(i).getId());
+            System.out.println("| NOME: " + movies.get(i).getName());
+            System.out.println("| ANO: " + movies.get(i).getYear());
+            System.out.println("| CATEGORIA: " + movies.get(i).getCategory());
+            System.out.println("| DIRETOR: " + movies.get(i).getDirector());
+            System.out.println("| ESTRELANDO: " + movies.get(i).getStarring()[0] + " e " + movies.get(i).getStarring()[1]);
+            System.out.println("| SINÓPSE: " + movies.get(i).getSynopsis());
+            System.out.println(" ---------------------");
+            System.out.println();
+
         }
 
+    }
+
+    public void test1() {
+        System.out.println(movies);
+        System.out.println(movies.size());
+    }
+    public void test2() {
     }
 
 }

@@ -66,5 +66,9 @@ public class Movie {
         this.synopsis = synopsis;
     }
 
+    @Override
+    public String toString() {
+        return "Movie{" + "id=" + id + ", name=" + name + ", year=" + year + ", category=" + category + ", director=" + director + ", starring=" + starring + ", synopsis=" + synopsis + '}';
+    }
 
 }

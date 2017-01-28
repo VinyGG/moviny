@@ -1,6 +1,7 @@
 package br.com.viny.moviny.main;
 
 import java.util.Scanner;
+
 public class Start {
 
     public static void main(String[] args) {
@@ -8,11 +9,13 @@ public class Start {
         int opc;
         Repository repo = new Repository();
         do {
-            System.out.println("1 - Adicionar Filme");
-            System.out.println("2 - Apagar Filme");
-            System.out.println("3 - Mostrar Filmes");
-            System.out.println("0 - Sair");
-            System.out.print("Escolha uma Opção: ");
+            System.out.println();
+            System.out.println("- Moviny v0.13 -");
+            System.out.println("1 - ADICIONAR FILME");
+            System.out.println("2 - APAGAR FILME");
+            System.out.println("3 - MOSTRAR FILMES");
+            System.out.println("0 - SAIR");
+            System.out.print("> ");
             opc = scan.nextInt();
 
             switch (opc) {
@@ -24,8 +27,21 @@ public class Start {
                     repo.showMovies();
                     break;
                 }
+                case 0: {
+                    System.out.println("> PROGRAMA FINALIZADO!");
+                    break;
+                }
+
+                case -1: {
+                    repo.test1();
+                    break;
+                }
+                case -2: {
+                    repo.test2();
+                    break;
+                }
                 default: {
-                    System.out.println("Opção Inválida!");
+                    System.out.println("> OPÇÃO INVÁLIDA!");
                 }
             }
         } while (opc != 0);
