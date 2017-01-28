@@ -1,4 +1,4 @@
-package main;
+package br.com.viny.moviny.main;
 
 public class Movie {
 

@@ -1,7 +1,7 @@
-package main;
+package br.com.viny.moviny.main;
 
 import java.util.Scanner;
-public class Main {
+public class Start {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -18,6 +18,11 @@ public class Main {
             switch (opc) {
                 case 1: {
                     repo.addMovie();
+                    break;
+                }
+                case 3: {
+                    repo.showMovies();
+                    break;
                 }
                 default: {
                     System.out.println("Opção Inválida!");
