@@ -1,19 +1,21 @@
 package br.com.viny.moviny.main;
 
+
 import br.com.viny.moviny.main.Movie;
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Repository {
 
     Scanner scan = new Scanner(System.in);
     String nome;
 
-    Movie movie = new Movie();
+    Movie movie;
     String[] starring = new String[2];
     int id = 0;
     int idSearch;
-    private ArrayList<Movie> movies = new ArrayList<Movie>();
+    ArrayList<Movie> movies = new ArrayList<Movie>();
 
     public ArrayList<Movie> getMovies() {
         return movies;
@@ -24,24 +26,17 @@ public class Repository {
     }
 
     public void addMovie() {
+        movie = new Movie();
         this.movie.setId(this.id + 1);
         this.id = this.id + 1;
-        System.out.print("Nome: ");
-        this.movie.setName(scan.nextLine());
-        System.out.print("Ano: ");
-        this.movie.setYear(Integer.parseInt(scan.nextLine()));
-        System.out.print("Categoria: ");
-        this.movie.setCategory(scan.nextLine());
-        System.out.print("Diretor: ");
-        this.movie.setDirector(scan.nextLine());
-        System.out.print("Estrelando: ");
-        this.starring[0] = scan.nextLine();
-        System.out.print("e: ");
-        this.starring[1] = scan.nextLine();
+        this.movie.setName(JOptionPane.showInputDialog("Nome"));
+        this.movie.setYear(Integer.parseInt(JOptionPane.showInputDialog("Ano")));
+        this.movie.setCategory(JOptionPane.showInputDialog("Categoria"));
+        this.movie.setDirector(JOptionPane.showInputDialog("Diretor"));
+        this.starring[0] = JOptionPane.showInputDialog("Estrelando");
+        this.starring[1] = JOptionPane.showInputDialog("e");
         this.movie.setStarring(starring);
-        System.out.print("Sinópse: ");
-        this.movie.setSynopsis(scan.nextLine());
-        System.out.println(movie);
+        this.movie.setSynopsis(JOptionPane.showInputDialog("Sinópse"));
         movies.add(this.movie);
 
         System.out.println("> FILME ADICIONADO COM SUCESSO!");
@@ -59,9 +54,7 @@ public class Repository {
             System.out.println("| SINÓPSE: " + movies.get(i).getSynopsis());
             System.out.println(" ---------------------");
             System.out.println();
-
         }
-
     }
 
     public void test1() {

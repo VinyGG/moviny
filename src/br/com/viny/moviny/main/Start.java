@@ -1,30 +1,33 @@
 package br.com.viny.moviny.main;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Start {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner scan = new Scanner(System.in);
         int opc;
         Repository repo = new Repository();
+        UI ui = new UI();
+
         do {
-            System.out.println();
-            System.out.println("- Moviny v0.13 -");
-            System.out.println("1 - ADICIONAR FILME");
-            System.out.println("2 - APAGAR FILME");
-            System.out.println("3 - MOSTRAR FILMES");
-            System.out.println("0 - SAIR");
-            System.out.print("> ");
+            JOptionPane.showInputDialog(ui.menu);
             opc = scan.nextInt();
 
             switch (opc) {
                 case 1: {
                     repo.addMovie();
+                    System.in.read();
                     break;
                 }
                 case 3: {
                     repo.showMovies();
+                    System.in.read();
                     break;
                 }
                 case 0: {
